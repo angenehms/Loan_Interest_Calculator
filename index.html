@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대출금리계산기</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="cont-tit">
+            <h1 class="txt-tit">내가 갚아야하는 이자는?</h1>
+            <p class="txt-tit-desc">"내게 적절한 대출상품을 찾아보자"</p>
+        </header>
+
+        <main>
+
+            <form class="form-loan-info">
+                <h2 class="cover-up">대출 정보</h2>
+                <label class="txt-loan-amount"><span class="box-deco">대출금액 :</span>
+                    <input class="put-loan-amount" type="text" placeholder="예)  2,000,000" required> 원
+                </label>
+
+                <label class="txt-loan-period"><span class="box-deco">대출기간 :</span>
+                    <input class="put-loan-period" type="number" placeholder="예)  1" required> 년
+                </label>
+                
+                <label class="txt-loan-interest-rate"><span class="box-deco">대출금리 :</span>
+                    <input class="put-loan-interest-rate" type="number" id="loan-interest-rate" placeholder="예)  2.2" required> %
+                </label>
+            </form>
+
+            <form class="txt-repayment-type"><p class="method">상환방법</p>
+                <input class="put-repayment-type method-first" type="radio" name="repayment-type" required> 만기일시상환
+                <input class="put-repayment-type method-second" type="radio" name="repayment-type" required> 원금균등분할상환
+                <input class="put-repayment-type method-third" type="radio" name="repayment-type" required> 원리금균등분할상환
+            </form>
+
+            <section class="btn-container">
+                <h2 class="cover-up">버튼</h2>
+                <button class="cal" type="button">CALCULATE</button>
+                <button class="reset" type="button">RESET</button>
+             </section>
+            
+             <section class="sec-loading">
+                <h2 class="cover-up">계산화면</h2>
+                <img class="img-loading" src="./src/flower.png" alt="">
+            </section>
+
+             <section class="sec-short-result">
+                <h2 class="simple-result cover-up">간편 대출이자 계산결과</h2>
+                <span class="txt-payment">총 납입금액 :</span>
+                <strong class="value-payment"></strong>
+                <span class="txt-interest">총 이자 :</span>
+                <strong class="value-interest"></strong>
+            </section>
+
+            
+            <table class="table-detailed-result">
+                <caption class="detailed-result cover-up">상세 대출이자 계산결과</caption>
+                <thead class="tit-detailed-result">
+                    <tr>
+                        <th>회차</th>
+                        <th>납입금액</th>
+                        <th>원금</th>
+                        <th>이자</th>
+                        <th>잔금</th>
+                    </tr>
+                </thead>
+                <tbody class="cont-detailed-result">
+                    <tr>
+                        <td>1</td>
+                        <td>3,666</td>
+                        <td>0</td>
+                        <td>3,666</td>
+                        <td>2,000,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </main>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
